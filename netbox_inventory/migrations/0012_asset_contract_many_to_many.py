@@ -65,17 +65,17 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 blank=True,
                 help_text='Contracts associated with this asset',
-                related_name='assets',
+                related_name='assets_new',
                 to='netbox_inventory.contract',
                 verbose_name='Contracts',
             ),
         ),
 
         # Step 3: Migrate data from old ForeignKey to new ManyToManyField (if any)
-        migrations.RunPython(
-            migrate_contract_data_forward,
-            migrate_contract_data_reverse,
-        ),
+#        migrations.RunPython(
+#            migrate_contract_data_forward,
+#            migrate_contract_data_reverse,
+#        ),
 
         # Step 4: Remove the temporary ForeignKey field
         migrations.RemoveField(
