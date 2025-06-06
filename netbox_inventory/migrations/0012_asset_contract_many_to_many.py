@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 blank=True,
                 help_text='Contracts associated with this asset',
-                related_name='assets_new',
+                related_name='assets',
                 to='netbox_inventory.contract',
                 verbose_name='Contracts',
             ),
